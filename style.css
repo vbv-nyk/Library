@@ -20,7 +20,7 @@ body{
 }
 
 .new-book-container{
-    display:hidden;
+    display:none;
     flex-direction: column;
     gap: 20px;
     width: max-content;

@@ -28,7 +28,6 @@ function clearForm(){
 function closeButtonAdder(clicked_button){
     const dataKey = clicked_button.dataset["key"];
     const closeBookCard = document.querySelector(`.book-item[data-key = "${dataKey}"]`);
-    console.log(closeBookCard);
     bookList.removeChild(closeBookCard);
 }
 
@@ -67,7 +66,7 @@ function addBookToLibrary(e){
     }
     const b = new Book(authorName.value,titleName.value,pageNumber.value);
     displayBook(b);
-    newBookContainer.style.display = "hidden";
+    newBookContainer.style.display = "none";
     cur++;
     clearForm();
     e.preventDefault();
