@@ -10,7 +10,6 @@ let myLibrary = [];
 let cur = 0;
 
 function newBook(){
-    console.log("Hi");
     newBookContainer.style.display = "flex";
 }
 
@@ -26,22 +25,34 @@ function clearForm(){
     pageNumber.value = "";
 }
 
+function closeButtonAdder(clicked_button){
+    const dataKey = clicked_button.dataset["key"];
+    const closeBookCard = document.querySelector(`.book-item[data-key = "${dataKey}"]`);
+    console.log(closeBookCard);
+    bookList.removeChild(closeBookCard);
+}
+
 function displayBook(b){
     const bookCard = document.createElement("div");
     const bookAuthor = document.createElement("div");
     const bookTitle = document.createElement("div");
     const bookPages = document.createElement("div");
-    const bookNumber = document.createElement("div");
     const labelRead = document.createElement("label");
     const readBook = document.createElement(`input`);
+    const closeButton = document.createElement('input');
+    bookCard.setAttribute("data-key",`${cur}`);
+    closeButton.setAttribute("data-key",`${cur}`);
+    closeButton.type = "button";
+    closeButton.value = "X";
+    closeButton.classList.add("close-button");
+    closeButton.setAttribute("onclick","closeButtonAdder(this)");
     labelRead.textContent = "Read?";
     readBook.type = "checkbox";
     labelRead.appendChild(readBook);
-    bookNumber.insertAdjacentText("afterbegin",`Book ${cur + 1}`);
     bookAuthor.insertAdjacentText("afterbegin",`Author: ${b.author}`);
     bookTitle.insertAdjacentText("afterbegin",`Title: ${b.title}`);
     bookPages.insertAdjacentText("afterbegin",`Pages: ${b.pages}`);
-    bookCard.appendChild(bookNumber);
+    bookCard.appendChild(closeButton);  
     bookCard.appendChild(bookAuthor);
     bookCard.appendChild(bookTitle);
     bookCard.appendChild(bookPages);
@@ -52,7 +63,6 @@ function displayBook(b){
 
 function addBookToLibrary(){
     const b = new Book(authorName.value,titleName.value,pageNumber.value);
-    myLibrary.push(b);
     clearForm();
     displayBook(b);
     newBookContainer.style.display = "none";
