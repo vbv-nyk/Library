@@ -5,7 +5,7 @@
 }
 body{
     height: 100vh;
-    background-color: rgb(102, 93, 110);
+    background-color: rgb(64, 60, 59);
 }
 
 .logo{
@@ -18,8 +18,6 @@ body{
     display: flex;
     justify-content: space-between; 
 }
-
-
 
 .new-book-container{
     display:none;
@@ -86,7 +84,7 @@ input[type="text"]:focus,input[type="number"]:focus{
 }
 
 .book-item{
-    border: 2px rgb(135, 131, 186) solid;
+    border: 2px rgb(37, 37, 41) solid;
     text-align: center;
     font-weight: bolder;
     display: flex;
