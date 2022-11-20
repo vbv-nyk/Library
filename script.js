@@ -32,6 +32,11 @@ function displayBook(b){
     const bookTitle = document.createElement("div");
     const bookPages = document.createElement("div");
     const bookNumber = document.createElement("div");
+    const labelRead = document.createElement("label");
+    const readBook = document.createElement(`input`);
+    labelRead.textContent = "Read?";
+    readBook.type = "checkbox";
+    labelRead.appendChild(readBook);
     bookNumber.insertAdjacentText("afterbegin",`Book ${cur + 1}`);
     bookAuthor.insertAdjacentText("afterbegin",`Author: ${b.author}`);
     bookTitle.insertAdjacentText("afterbegin",`Title: ${b.title}`);
@@ -40,6 +45,7 @@ function displayBook(b){
     bookCard.appendChild(bookAuthor);
     bookCard.appendChild(bookTitle);
     bookCard.appendChild(bookPages);
+    bookCard.appendChild(labelRead);
     bookCard.classList.add("book-item");
     bookList.appendChild(bookCard);
 }
