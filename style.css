@@ -88,3 +88,16 @@ button:hover{
     padding: 30px;
     white-space: nowrap;
 }
+
+.book-item label{
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+}
+
+.book-item input[type="checkbox"]{
+  opacity: 1;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
