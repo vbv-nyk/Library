@@ -61,11 +61,15 @@ function displayBook(b){
     bookList.appendChild(bookCard);
 }
 
-function addBookToLibrary(){
+function addBookToLibrary(e){
+    if(!authorName.value || !titleName.value || !pageNumber.value){
+        return false;
+    }
     const b = new Book(authorName.value,titleName.value,pageNumber.value);
-    clearForm();
     displayBook(b);
-    newBookContainer.style.display = "none";
+    newBookContainer.style.display = "hidden";
     cur++;
+    clearForm();
+    e.preventDefault();
 }
 

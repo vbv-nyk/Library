@@ -20,7 +20,7 @@ body{
 }
 
 .new-book-container{
-    display:none;
+    display:hidden;
     flex-direction: column;
     gap: 20px;
     width: max-content;
@@ -44,7 +44,7 @@ body{
     color: black;
 }
 
-.new-book-form input[type="button"]{
+.new-book-form button{
     background-color: transparent;
     border: none;
     margin-top: 10px;
@@ -56,7 +56,7 @@ body{
 
 }
 
-.new-book-form input[type="button"]:hover{
+.new-book-form button:hover{
     border: 1px yellow solid;
 }
 
